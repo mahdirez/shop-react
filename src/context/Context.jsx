@@ -10,6 +10,7 @@ export function ContextProvider({ children }) {
   async function getData() {
     const { data } = await axios.get("https://dummyjson.com/products");
     setProducts(data.products);
+    setFilter(data.products)
   }
 
   useEffect(() => {
