@@ -6,7 +6,7 @@ function Brand() {
   return (
     <div className="flex gap-4 items-center justify-center">
       برند ها
-      <select value={filter} onChange={filterBrands}  className="outline-none border-2 w-28">
+      <select  onChange={filterBrands}  className="outline-none border-2 w-28">
         
           {brands.map((item,index) => {
            return <option value={item} key={index}>{item}</option>;

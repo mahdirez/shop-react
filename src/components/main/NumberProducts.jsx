@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import { Context } from '../../context/Context'
 
 function NumberProducts() {
-  const {product} = useContext(Context);
+  const {filter} = useContext(Context);
   return (
-    <p> تعداد محصولات : {product.length}</p>
+    <p> تعداد محصولات : {filter.length}</p>
   )
 }
 

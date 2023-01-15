@@ -5,6 +5,7 @@ export const Context = createContext();
 export function ContextProvider({ children }) {
   const [product, setProducts] = useState([]);
   const [sort, setSort] = useState("asc");
+  const [filter, setFilter] = useState([]);
 
   async function getData() {
     const { data } = await axios.get("https://dummyjson.com/products");
@@ -18,10 +19,10 @@ export function ContextProvider({ children }) {
   function sortProducts(e) {
     setSort(e.target.value);
     if (sort === "asc") {
-      setProducts(product.sort((a, b) => (a.id < b.id ? 1 : -1)));
+      setFilter(filter.sort((a, b) => (a.id < b.id ? 1 : -1)));
     }
     if (sort === "desc") {
-      setProducts(product.sort((a, b) => (a.id > b.id ? 1 : -1)));
+      setFilter(filter.sort((a, b) => (a.id > b.id ? 1 : -1)));
     }
   }
 
@@ -29,11 +30,11 @@ export function ContextProvider({ children }) {
 
   const filterBrands = (category) => {
     const value = category.target.value;
-    if (filter === "همه") {
-      return setProducts(product);
+    if (value === "همه") {
+    return  setFilter(product);
     }
     const loopFilter = product.filter((item) => item.category === value);
-    return setProducts(loopFilter);
+    return setFilter(loopFilter);
   };
   return (
     <Context.Provider

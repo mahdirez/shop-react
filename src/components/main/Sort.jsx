@@ -9,7 +9,7 @@ function Sort() {
       <div className="flex gap-5">
         <label className="flex items-center gap-2">
           قدیمی ترین
-          <input type="radio" value="asc" name="sort" defaultChecked onChange={sortProducts} />
+          <input type="radio" value="asc" name="sort"  onChange={sortProducts} />
         </label>
         <label className="flex items-center gap-2">
           جدیدترین
