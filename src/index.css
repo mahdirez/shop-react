@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: iran;
-    src: url(../src/assets/font/Irancell/ایرانسل\ لایت\ .otf);
+  font-family: iran;
+  src: url(../src/assets/font/Irancell/ایرانسل\ لایت\ .otf);
 }
-*{
-    direction: rtl;
-    font-family: 'iran';
+
+* {
+  direction: rtl;
+  font-family: "iran";
 }
